@@ -167,34 +167,4 @@ echo "</div>";
 echo "</div>";
 echo "</div>";
 echo "</div>";
-if ($job['status'] != 'COMPLETED' && $job['status'] != 'REJECTED') {
-  echo "<div class='card text-center mx-auto rounded-5' style='
-  width: 30rem;
-  margin-top: 80px;
-  background-color: #e96e58;
-  color: white;
-  '>";
-  echo "<div class=card-body>";
-  echo "<main class='form-signin w-100 mx-auto mt-0 text-center'>";
-  echo "<form action=job_details.php method=post>";
-  echo "<h1 class='h3 mb-3 fw-normal'>Change Job Status</h1>";
-  echo "<div class=dropdown>";
-  echo '<select name="new_status" class="btn bg-light dropdown-toggle mb-3 mt-0" style="width: 18rem;"">';
-  echo '<option disabled selected value> -- select a new status -- </option>';
-  if ($job['status'] == 'PENDING') {
-    echo "<option class=dropdown-item value=REJECTED>Reject</option>";
-    echo "<option class=dropdown-item value=CONFIRMED>Confirm</option>";
-  } else {
-    echo "<option class=dropdown-item value=COMPLETED>Complete</option>";
-  }
-  echo '</select>';
-  echo "</div>";
-  echo "<input type=text name=job_id value=$job_id hidden=true>";
-  echo "<input type=text name=change_status value=true hidden=true>";
-  echo "<button class='w-100 btn btn-lg text-light mt-3' type=submit style='background-color: #5b9bd5'>Change Status</button>";
-  echo "</form>";
-  echo "</main>";
-  echo "</div>";
-  echo "</div>";
-}
 ?>

@@ -111,8 +111,16 @@ echo "</div>";
 echo "<div class='row text-start' style='padding-left: 20px; padding-right: 20px'>";
 echo "<div class=col><b>Description: </b> $job[description]</div>";
 echo "</div>";
-list($bookedFrom) = explode(" ", $job['booked_from']);
-list($bookedTo) = explode(" ", $job['booked_to']);
+if (isset($row['booked_from'])) {
+  list($bookedFrom) = explode(" ", $row['booked_from']);
+} else {
+  $bookedFrom = '';
+}
+if (isset($row['booked_to'])) {
+  list($bookedTo) = explode(" ", $row['booked_to']);
+} else {
+  $bookedTo = '';
+}
 echo "<div class='row text-start' style='padding-left: 20px; padding-right: 20px'>";
 echo "<div class=col><b>Booked From: </b> $bookedFrom</div>";
 echo "</div>";

@@ -122,12 +122,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $tradesman = $tradesmanObject->getTrademan();
   if ($tradesman['success']) {
     $tradesman = $tradesman['data']->fetch_assoc();
+  } else {
+    $tradesman = null;
   }
   include "../classes/user_address.php";
   $addressObject = new UserAddress($user_id, $dbc);
   $address = $addressObject->getUserAddress();
   if ($address['success']) {
     $address = $address['data']->fetch_assoc();
+  } else {
+    $address = null;
   }
 }
 ?>

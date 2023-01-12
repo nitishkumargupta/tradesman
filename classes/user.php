@@ -161,6 +161,17 @@ class User
     }
   }
 
+  public function checkPassword($oldPassword)
+  {
+    $query = "SELECT * FROM users WHERE email='$this->email' and pass = SHA1($oldPassword)";
+    $result = $this->dbc->query($query);
+    $rowcount = $result->num_rows;
+    if ($rowcount == 1) {
+      return true;
+    }
+    return false;
+  }
+
 }
 
 class Trademan extends User

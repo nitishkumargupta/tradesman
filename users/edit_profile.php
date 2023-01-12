@@ -87,12 +87,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $customer = $customerObject->getCustomer();
   if ($customer['success']) {
     $customer = $customer['data']->fetch_assoc();
+  } else {
+    $customer = null;
   }
   include "../classes/user_address.php";
   $addressObject = new UserAddress($user_id, $dbc);
   $address = $addressObject->getUserAddress();
   if ($address['success']) {
     $address = $address['data']->fetch_assoc();
+  } else {
+    $address = null;
   }
 }
 ?>

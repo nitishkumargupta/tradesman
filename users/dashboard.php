@@ -42,8 +42,16 @@ if ($r->num_rows != 0) {
   echo "<ol style='padding-left: 2rem; padding-right: 2rem'>";
   while ($row = $r->fetch_assoc()) {
     echo "<li>";
-    list($bookedFrom) = explode(" ", $row['booked_from']);
-    list($bookedTo) = explode(" ", $row['booked_to']);
+    if (isset($row['booked_from'])) {
+      list($bookedFrom) = explode(" ", $row['booked_from']);
+    } else {
+      $bookedFrom = '';
+    }
+    if (isset($row['booked_to'])) {
+      list($bookedTo) = explode(" ", $row['booked_to']);
+    } else {
+      $bookedTo = '';
+    }
     echo "<a href=./job_details.php?job_id=$row[job_id] style='color: white'> $row[job_title]</a> from $bookedFrom to $bookedTo</li>";
   }
   echo "</ol>";
@@ -91,8 +99,16 @@ if ($r->num_rows != 0) {
   echo "<ol style='padding-left: 2rem; padding-right: 2rem'>";
   while ($row = $r->fetch_assoc()) {
     echo "<li>";
-    list($bookedFrom) = explode(" ", $row['booked_from']);
-    list($bookedTo) = explode(" ", $row['booked_to']);
+    if (isset($row['booked_from'])) {
+      list($bookedFrom) = explode(" ", $row['booked_from']);
+    } else {
+      $bookedFrom = '';
+    }
+    if (isset($row['booked_to'])) {
+      list($bookedTo) = explode(" ", $row['booked_to']);
+    } else {
+      $bookedTo = '';
+    }
     echo "<a href=./job_details.php?job_id=$row[job_id] style='color: white'> $row[job_title]</a> from $bookedFrom to $bookedTo</li>";
   }
   echo "</ol>";
@@ -140,8 +156,16 @@ if ($r->num_rows != 0) {
   echo "<ol style='padding-left: 2rem; padding-right: 2rem'>";
   while ($row = $r->fetch_assoc()) {
     echo "<li>";
-    list($bookedFrom) = explode(" ", $row['booked_from']);
-    list($bookedTo) = explode(" ", $row['booked_to']);
+    if (isset($row['booked_from'])) {
+      list($bookedFrom) = explode(" ", $row['booked_from']);
+    } else {
+      $bookedFrom = '';
+    }
+    if (isset($row['booked_to'])) {
+      list($bookedTo) = explode(" ", $row['booked_to']);
+    } else {
+      $bookedTo = '';
+    }
     echo "<a href=./job_details.php?job_id=$row[job_id] style='color: white'> $row[job_title]</a> from $bookedFrom to $bookedTo</li>";
   }
   echo "</ol>";
@@ -189,8 +213,16 @@ if ($r->num_rows != 0) {
   echo "<ol style='padding-left: 2rem; padding-right: 2rem'>";
   while ($row = $r->fetch_assoc()) {
     echo "<li>";
-    list($bookedFrom) = explode(" ", $row['booked_from']);
-    list($bookedTo) = explode(" ", $row['booked_to']);
+    if (isset($row['booked_from'])) {
+      list($bookedFrom) = explode(" ", $row['booked_from']);
+    } else {
+      $bookedFrom = '';
+    }
+    if (isset($row['booked_to'])) {
+      list($bookedTo) = explode(" ", $row['booked_to']);
+    } else {
+      $bookedTo = '';
+    }
     echo "<a href=./job_details.php?job_id=$row[job_id] style='color: white'> $row[job_title]</a> from $bookedFrom to $bookedTo</li>";
   }
   echo "</ol>";

@@ -13,7 +13,7 @@ function login($dbc, $email, $password)
       if (session_status() !== PHP_SESSION_ACTIVE)
         session_start();
       $_SESSION['user_id'] = $data['user_id'];
-      $_SESSION['user_email'] = $data['user_email'];
+      $_SESSION['user_email'] = $data['email'];
       $_SESSION['first_name'] = $data['first_name'];
       $_SESSION['last_name'] = $data['last_name'];
       $_SESSION['user_type'] = $data['type'];

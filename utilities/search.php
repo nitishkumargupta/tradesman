@@ -8,7 +8,7 @@ function search($dbc, $category, $date, $postal_code)
     if ($rowcount) {
       return array('success' => true, 'data' => $r);
     } else {
-      return array('success' => true, 'message' => 'No Data Found');
+      return array('success' => false, 'message' => 'No Data Found');
     }
   } catch (Exception $e) {
     return array('success' => false, 'message' => 'Internal Server Error');

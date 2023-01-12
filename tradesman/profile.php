@@ -99,6 +99,10 @@ if ($result['success']) {
   }
   echo "</ul>";
   echo "</div>";
+  echo "<a href='./edit_profile.php'><button type=button class='btn me-2' style='color: white;'>Edit Profile</button>";
+  echo "</a>";
+  echo "<a href='./change_password.php'><button type=button class='btn me-2' style='color: white;'>Change Password</button>";
+  echo "</a>";
   echo "</div>";
   echo "</div>";
   echo "</div>";
